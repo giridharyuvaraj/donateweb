@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <div class="signup-container">
+        <div class="form-box">
+            <h2>Sign Up</h2>
+            <select id="role">
+                <option value="" selected disabled>Select Role</option>
+                <option value="donor">Donor</option>
+                <option value="receiver">Receiver</option>
+            </select>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email ID" required>
+            <input type="password" placeholder="Password" required>
+            <input type="password" placeholder="Re-enter Password" required>
+            <input type="tel" placeholder="Phone Number" required id="phoneNumber">
+            
+            <!-- Geolocation Button -->
+            <button type="button" id="getLocation">Get My Location</button>
+            <p id="locationStatus"></p>
+    
+            <!-- OTP Section (Initially Hidden) -->
+            <div id="otpSection" style="display: none;">
+                <p>Verify your mobile number</p>
+                <div class="otp-boxes">
+                    <input type="text" maxlength="1" id="otp1" class="otp-input" required>
+                    <input type="text" maxlength="1" id="otp2" class="otp-input" required>
+                    <input type="text" maxlength="1" id="otp3" class="otp-input" required>
+                    <input type="text" maxlength="1" id="otp4" class="otp-input" required>
+                    <input type="text" maxlength="1" id="otp5" class="otp-input" required>
+                </div>
+                <button type="button" id="verifyOtpBtn">Verify OTP</button>
+            </div>
+    
+            <!-- Submit Button (Disabled until OTP is verified) -->
+            <button class="submit-btn" id="submitBtn" disabled>Sign Up</button>
+    
+            <p class="switch-form">Already have an account? <a href="index.html">Login</a></p>
+        </div>
+    </div>
+    
+
+</body>
+</html>

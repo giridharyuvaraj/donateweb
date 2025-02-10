@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Signup</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+<!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Foodie</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><button class="login-btn">Login</button></li>
+        </ul>
+        <div class="toggle-btn" id="toggleBtn">&#9776;</div>
+    </nav>
+<!-- Home Page -->
+    <section class="home">
+        <div class="container">
+            <div class="left">
+                <img src="assets/foo.jpg" alt="Delicious Food">
+            </div>
+            <div class="right">
+                <div class="form-box" id="loginBox">
+                    <h2>Login</h2>
+                    <input type="email" placeholder="Email ID" required>
+                    <input type="password" placeholder="Password" required>
+                    <p class="forgot-password">
+                        <span id="forgotPassword" style="cursor: pointer; color: #007BFF;">Forgot Password?</span>
+                    </p>
+                    <button class="submit-btn">Login</button>
+                    <p class="switch-form">
+                        New user? <span id="showSignup"></span> 
+                        <!-- Sign-up Button -->
+                        <a href="signup.html" class="sign-up-btn-inline">Sign Up</a>
+                    </p>
+                    <!-- Social login section visible only on the login page -->
+                    <div class="social-login" id="socialLogin">
+                        <p>Or Sign in via</p>
+                        <div class="icons">
+                            <img src="assets/google.png" alt="Google" class="social-icon" id="googleLogin">
+                            <img src="assets/phone.png" alt="Phone" class="social-icon" id="phoneLogin">
+                            <img src="assets/mail.png" alt="Email" class="social-icon" id="emailLogin">
+                        </div>
+                    </div>
+                          <!-- Login method modals -->
+                          <div id="loginMethodModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close-btn">&times;</span>
+                                <h2 id="loginMethodTitle">Choose Login Method</h2>
+                                <div id="loginFormContent"></div>
+                                <button onclick="submitLogin()">Submit</button>
+                            </div>
+                        </div>
+                    <!-- Forgot Password Modal -->
+                    <div id="forgotPasswordModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close-btn" id="closeForgotModal">&times;</span>
+                            <h2>Reset Your Password</h2>
+                            <p>Enter your email address and we'll send you a link to reset your password.</p>
+                            <input type="email" id="resetEmail" placeholder="Enter your email" required>
+                            <button onclick="sendResetLink()">Send Reset Link</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

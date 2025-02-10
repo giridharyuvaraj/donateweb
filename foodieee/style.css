@@ -1,0 +1,518 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+}
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ff6600;
+    padding: 5px 5px;
+    position: static; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    margin: 5px;
+}
+/* Navbar Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+.nav-links li {
+    margin: 0 15px;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+/* Login Button */
+.login-btn {
+    background: white;
+    color: #ff6600;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.login-btn:hover{
+    background-color: #007BFF;
+}
+/* Toggle Button (for mobile) */
+.toggle-btn {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    display: none;  /* Hidden by default on desktop */
+}
+/* Body Content */
+.main-content {
+    padding-top: 50px; 
+}
+/* Desktop View */
+@media screen and (min-width: 769px) {
+    .container {
+        flex-direction: row; 
+        justify-content: center; /* Center the items horizontally */
+        align-items: flex-start; /* Align items at the start of the container */
+        padding: 0 20px;
+         /* Add padding to prevent empty space on the sides */
+    }
+    .left {
+        flex: 1; /* Allow the image section to take up available space */
+        display: flex;
+        justify-content: center; /* Center the image horizontally */
+        padding-right: 20px;
+        margin-left: -5cm;
+        padding: 20px; /* Add space between image and form */
+    }
+
+    .left img {
+        max-width: 80%; /* Ensure the image does not exceed its container */
+        border-radius: 10px; /* Keep the border radius */
+    }
+    .right {
+        flex: 1; /* Allow the form section to take up available space */
+        max-width: 400px; /* Limit form width for better alignment */
+        display: flex;
+        margin-right: -3cm;
+        flex-direction: column;
+    /* Center the form vertically */
+    }
+    .signup-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+       background-color: whitesmoke;
+    }
+    .signup-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: inherit; /* Use the same background image */
+        filter: blur(70px); /* Adjust blur intensity */
+        z-index: -1; /* Place it behind the content */
+    }
+    /* Color overlay with transparency */
+.signup-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(34, 193, 195,0.3); 
+    z-index: -1;
+}
+    .form-box {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 350px;
+    }
+    
+    .form-box input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    
+    .submit-btn {
+        width: 100%;
+        background: #ff5e62;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .switch-form {
+        margin-top: 10px;
+    }
+    .hidden {
+        display: none ;
+        visibility: hidden;
+        height: 0;
+        overflow: hidden;
+    }
+    
+}
+
+
+/* Mobile View */
+@media screen and (max-width: 768px){
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #ff6600;
+        padding: 15px 5px;
+        position: static; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+    
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #ff6600;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .signup-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: whitesmoke;
+    }
+    
+    .signup-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: inherit; /* Use the same background image */
+        filter: blur(30px); /* Adjust blur intensity */
+        z-index: -1; /* Place it behind the content */
+    }
+    .nav-links.active {
+        display: flex;  /* Show links when active */
+    }
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .toggle-btn {
+        display: block; /* Show the toggle button on mobile */
+        padding-right: 20px;
+    }
+    .switch-form {
+        margin-top: 10px;
+        font-size: 12px;
+    }
+    
+    .switch-form span {
+        color: #ff6600;
+        cursor: pointer;
+        font-weight: bold;
+    }
+   
+        .container {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            gap: 20px;
+            padding: 20px;
+        }
+    
+        .left {
+            width: 100%;
+            max-width: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .left img {
+            width: 90%;
+            max-width: 400px; /* Adjust image size */
+            display: block;
+            margin: 0 auto;
+        }
+    
+        .right {
+            width: 100%;
+            max-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .form-box {
+            width: 90%;
+            max-width: 350px;
+            padding: 15px;
+        }
+        .form-box h2 {
+            font-size: 18px;
+        }
+    
+        .submit-btn {
+            font-size: 14px;
+        }
+        
+}
+
+.otp-boxes {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+/* Main Container */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 20px;
+}
+.container {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+    max-width: 800px;
+    flex-wrap: wrap;
+}
+
+/* Left Section (Image) */
+.left img {
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px 10px;
+    padding-left: -3px;
+    display: block;
+    margin: 2px auto;
+}
+
+/* Right Section (Forms) */
+.right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+    max-width: 400px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Form Box */
+.form-box {
+    background: white;
+    padding: 12px;
+    width: 100%;
+    max-width: 320px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.form-box h2 {
+    margin-bottom: 15px;
+    color: #ff6600;
+}
+
+.form-box input {
+    width: 100%;
+    padding: 4px;
+    padding-right:0px;
+    margin: 8px 0px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background: #e65c00;
+}
+
+.forgot-password {
+    color: #ff6600;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.switch-form {
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.switch-form span {
+    color: #ff6600;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Hide Sign-Up Initially */
+.hidden {
+    display: none;
+}
+
+/* Social Login Section (only for Login) */
+.social-login {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-login p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.icons img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.icons img:hover {
+    opacity: 0.8;
+}
+
+/* Hide Social Login on Sign-up Form */
+#socialLogin {
+    display: block; /* Show in Login form */
+}
+
+.signup-form #socialLogin {
+    display: none; /* Hide in Sign-up form */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+         /* Stack the image and form vertically */
+        gap:10px;
+    }
+    .hidden {
+        display: none !important;
+        visibility: hidden;
+        height: 0;
+        overflow: hidden;
+    }
+    
+    .form-box {
+        padding: 12px; /* Reduce padding further for mobile */
+    }
+
+    .left img {
+        width: 100%;
+        margin: 0px; /* Centers the image and adds space above and below */
+    }
+    .right {
+        margin-top: 40px; /* Add more space to avoid overlap */
+    }
+
+    .form-box h2 {
+        font-size: 12px; /* Adjust title size for mobile */
+    }
+}
+/* Geolocation Button */
+#getLocation {
+    width: 90%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #FF5F15;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#getLocation:hover {
+    background-color: #E04E10;
+}
+/* Basic styles for modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.icons img {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#loginMethodTitle {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#loginFormContent {
+    margin-bottom: 20px;
+}

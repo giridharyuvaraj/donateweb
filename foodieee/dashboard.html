@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Dashboard</title>
+    <link rel="stylesheet" href="dashboardstyle.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Foodie</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><button class="login-btn">Login</button></li>
+        </ul>
+        <div class="toggle-btn" onclick="toggleMenu()">☰</div> <!-- Toggle Button -->
+    </nav>
+
+    <section class="dashboard">
+        <h1>Donor Dashboard</h1>
+        <div class="card-container">
+            <div class="card">
+                <img src="assets/image1.jpeg" alt="Icon" class="icon">
+                <div class="content">
+                    <h3>Donations</h3>
+                    <p>View and manage your donations.</p>
+                    <button class="know-more-btn" onclick="showDetails('donations')">Know More</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/image2.jpeg" alt="Icon" class="icon">
+                <div class="content">
+                    <h3>Profile</h3>
+                    <p>View and edit your profile information.</p>
+                    <button class="know-more-btn" onclick="showDetails('profile')">Know More</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/image3.jpeg" alt="Icon" class="icon">
+                <div class="content">
+                    <h3>Events</h3>
+                    <p>Check upcoming donation events.</p>
+                    <button class="know-more-btn" onclick="showDetails('events')">Know More</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/image4.jpeg" alt="Icon" class="icon">
+                <div class="content">
+                    <h3>Donors</h3>
+                    <p>See the list of all donors.</p>
+                    <button class="know-more-btn" onclick="showDetails('donors')">Know More</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/image5.jpeg" alt="Icon" class="icon">
+                <div class="content">
+                    <h3>Reports</h3>
+                    <p>Generate and view reports.</p>
+                    <button class="know-more-btn" onclick="showDetails('reports')">Know More</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="assets/image6.jpeg" alt="Icon" class="icon">
+                <div class="content">
+                    <h3>Support</h3>
+                    <p>Get help and support.</p>
+                    <button class="know-more-btn" onclick="showDetails('support')">Know More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="slider" class="slider">
+                <img src="assets/image1.jpeg" alt="Image 1">
+                <img src="assets/image2.jpeg" alt="Image 2">
+                <img src="assets/image3.jpeg" alt="Image 3">
+                <img src="assets/image4.jpeg" alt="Image 4">
+                <img src="assets/image5.jpeg" alt="Image 5">
+            </div>
+            <p id="short-passage">Short passage about the selected topic.</p>
+            <button class="donate-btn">Donate</button>
+        </div>
+</body>
+</html>

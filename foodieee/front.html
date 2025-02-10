@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie - Donation Website</title>
+    <link rel="stylesheet" href="front.css">
+</head>
+<body>
+    <div class="container">
+        <div class="overlay">
+            <h1>“Empower Lives Through Giving”</h1>
+            <p>Together, we can build a future filled with love and care.</p>
+            <div class="buttons">
+                <button class="btn" id="loginBtn">Login</button>
+            </div>
+        </div>
+    </div>
+    <script>
+           document.addEventListener("DOMContentLoaded", function () {
+        // Login Button Click
+        document.getElementById("loginBtn").addEventListener("click", function () {
+            window.location.href = "index.html"; // Redirects to login page
+        });
+    });
+    </script>
+
+</body>
+</html>
