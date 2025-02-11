@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us Section</title>
+    <link rel="stylesheet" href="about.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="about-section">
+        <div class="about-content">
+            <h2>ABOUT US</h2>
+            <p>"With each act of kindness, we sew the seeds of hope.<br>
+                 Together, our compassion can transform lives. 
+                <br>Let's build a brighter tomorrow, one donation at a time."</p>
+            <button id="read-more-btn">Read More</button>
+            <p id="more-text" class="hidden">
+                Helping others is a fundamental aspect of human kindness and compassion that brings numerous benefits to both the giver and the receiver. By assisting others, we create a ripple effect of positivity that can uplift entire communities. Whether it's through volunteering, offering a listening ear, or providing support in times of need, acts of kindness foster a sense of belonging and interconnectedness. Helping others not only improves their well-being but also enhances our own, as it instills a sense of purpose and fulfillment. Additionally, supporting others can lead to stronger relationships, increased empathy, and a greater understanding of diverse perspectives. Simple gestures, like lending a hand to a neighbor or participating in community service, can make a significant difference in someone's life. Ultimately, helping others is a powerful way to build a more 
+                compassionate and united society, where everyone has the opportunity to thrive.  </p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img src="assets/fb.jpg" alt="Facebook" width="30" height="30">
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank">
+                        <img src="assets/twit.png" alt="Twitter" width="30" height="30">
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank">
+                        <img src="assets/insta.png" alt="Instagram" width="30" height="30">
+                    </a>
+                </div>
+        </div>
+        <div class="about-image">
+            <img src="assets/foo.jpg" alt="About Image">
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById("read-more-btn").addEventListener("click", function() {
+            var moreText = document.getElementById("more-text");
+            if (moreText.classList.contains("hidden")) {
+                moreText.classList.remove("hidden");
+                this.textContent = "Read Less";
+            } else {
+                moreText.classList.add("hidden");
+                this.textContent = "Read More";
+            }
+        });
+    </script>
+</body>
+</html>
